@@ -1,0 +1,27 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+}
+
+.rowCell,
+.columnCell {
+    border: 2px solid lightblue;
+    flex: 1;
+    height: 35px;
+}
