@@ -19,13 +19,13 @@ body {
 }
 
 .row {
-    border: 1px solid lightblue;
     flex: 1;
     display: flex;
 }
 
 .cell {
     border: 1px solid lightblue;
+    opacity: 0;
     background-color: black;
     flex: 1;
 }

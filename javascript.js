@@ -8,12 +8,15 @@ function grid(newSize) {
         container.appendChild(row);
         for (let k = 0; k < newSize; k++) {
             const cell = document.createElement('div');
-            cell.addEventListener('mouseenter', (event) => {
-                let currentCell = event.target;
-                currentCell.style.backgroundColor = 'white';
-            });
             cell.classList.add('cell');
             row.appendChild(cell);
+
+            let opacity = 0;
+            cell.addEventListener('mouseenter', (event) => {
+                let currentCell = event.target;
+                opacity += 0.1;
+                currentCell.style.opacity = opacity;
+        });
         }
     }
 }
