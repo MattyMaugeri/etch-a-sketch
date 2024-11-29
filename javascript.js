@@ -1,5 +1,11 @@
 const container = document.querySelector('#container');
-const newGridButton = document.querySelector('.new-grid');
+const gridButton = document.querySelector('.new-grid');
+let newGrid = 0;
+let oldGrid = 0;
+
+const gridDisplay = document.createElement('div');
+const title = document.querySelector('.title');
+title.appendChild(gridDisplay);
 
 function grid(newSize) {
     for (let i = 0; i < newSize; i++) {
@@ -12,13 +18,14 @@ function grid(newSize) {
             row.appendChild(cell);
 
             let opacity = 0;
-            cell.addEventListener('mouseenter', (event) => {
+            cell.addEventListener('mouseover', (event) => {
                 let currentCell = event.target;
                 opacity += 0.1;
                 currentCell.style.opacity = opacity;
-        });
+            });
         }
     }
+    gridDisplay.textContent = newGrid + ' x ' + newGrid;
 }
 
 function removeGrid(oldSize) {
@@ -28,10 +35,9 @@ function removeGrid(oldSize) {
     }
 }
 
-let newGrid = 0;
-let oldGrid = 0;
 
-newGridButton.addEventListener('click', () => {
+
+gridButton.addEventListener('click', () => {
     let children = container.childElementCount;
     newGrid = parseInt(Number(prompt('How many squares per side?')));
 
